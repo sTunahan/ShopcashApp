@@ -1,0 +1,6 @@
+framework module Pods_whizzizDemoTests {
+  umbrella header "Pods-whizzizDemoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

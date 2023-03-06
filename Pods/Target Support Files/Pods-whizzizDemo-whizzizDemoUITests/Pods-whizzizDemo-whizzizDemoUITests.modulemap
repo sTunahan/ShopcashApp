@@ -1,0 +1,6 @@
+framework module Pods_whizzizDemo_whizzizDemoUITests {
+  umbrella header "Pods-whizzizDemo-whizzizDemoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,7 +1,7 @@
 import Foundation
 
 //METHODS
-func requestSmsOtpSend (phoneNumber:String) -> URLRequest{
+func requestSmsOtpSend(phoneNumber:String) -> URLRequest{
     let url = postSmsOtpUrl
     let headers = headers
     guard let requestUrl = url else { fatalError() }

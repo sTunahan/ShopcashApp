@@ -14,6 +14,8 @@ extension VerificationViewController {
 }
 
 extension VerificationViewController{
+    
+    //MARK: for URLSession 
     func postData(){
         
         if let userInformation = userInformation?.phoneNumber{
@@ -33,10 +35,33 @@ extension VerificationViewController{
         }
 
     }
+    
+    //MARK: FOR Alamofire
+    func postDataAlamofire(){
+        
+        if let userInformation = userInformation?.phoneNumber {
+            
+            
+            AlamofirePostSmsOtpService().smsOtpSend(phone: userInformation,url: postSmsOtpUrl!){ [self] response in
+                
+                if let response = response{
+                    
+                    self.smsOtpSendAll = SmsOtpSendAll(responseAll: response)
+                    data = smsOtpSendAll.takeResult().data
+                    
+                }
+                
+            }
+        }
+      
+        }
+    
+    
 }
 
 extension VerificationViewController{
     func postOtpVerification(){
+        
         PostSmsOtpVerificationService().smsOtpVerificationSend(request:request) { response in
             
                 if let response = response {
@@ -55,6 +80,27 @@ extension VerificationViewController{
 
             }
             }
+    }
+    
+    func AlamofirePostOtpVerification(){
+        AlamofirePostSmsOtpVerificationService().smsOtpVerificationSend(data: data!, code: otpV, url: postSmsOtpVerificationUrl!) { [self] response in
+            
+            if let response = response {
+                
+                    guard case let response.result! = true else{
+                        DispatchQueue.main.async {
+                            self.makeAlert(title: "Error", msg: response.error!.message)
+                            buttonFeature(imageName: "sendAgain", button: self.sendAgainBtnClick, enable: true,title: "Kod Ulaşmadı Tekrar Yolla")
+                        }
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "passwordVC", sender: nil)
+                    }
+
+        }
+        }
     }
 }
 
@@ -78,6 +124,7 @@ extension VerificationViewController {
     }
 }
 
+
 extension VerificationViewController:OTPFieldViewDelegate{
     
     func shouldBecomeFirstResponderForOTP(otpTextFieldIndex index: Int) -> Bool {
@@ -87,7 +134,9 @@ extension VerificationViewController:OTPFieldViewDelegate{
     func enteredOTP(otp: String) {
         print(otp)
         buttonFeature(imageName: "Verification", button: self.verificationBtnClick, enable: true)
-        request = requestSmsOtpVerificationSend(id:data!, code:otp) // OTP DEĞERİNİN GİRİLDİĞİ YER CODE yeri...
+        otpV = otp
+        //MARK: FOR URLSession
+        //request = requestSmsOtpVerificationSend(id:data!, code:otp) // OTP DEĞERİNİN GİRİLDİĞİ YER CODE yeri...
     }
     
     func hasEnteredAllOTP(hasEnteredAll: Bool) -> Bool {

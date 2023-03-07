@@ -6,6 +6,7 @@ target 'whizzizDemo' do
   use_frameworks!
 
   pod 'OTPFieldView'
+  pod 'Alamofire'
 
   target 'whizzizDemoTests' do
     inherit! :search_paths

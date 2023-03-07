@@ -1,16 +1,20 @@
 PODS:
+  - Alamofire (5.6.4)
   - OTPFieldView (1.0.1)
 
 DEPENDENCIES:
+  - Alamofire
   - OTPFieldView
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - OTPFieldView
 
 SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   OTPFieldView: 700a752fe62c41d1c4914c78aa500fb30d97c255
 
-PODFILE CHECKSUM: 871c58d15fcdff8a2c6f5f766e5d259ec86eff3b
+PODFILE CHECKSUM: 7ef7f3fb04fca4249fa7a821016a656648b28b7e
 
 COCOAPODS: 1.11.3

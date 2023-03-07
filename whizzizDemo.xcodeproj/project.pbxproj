@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1185333D29B4B3D500B2E4B3 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1185333C29B4B3D500B2E4B3 /* PasswordViewController.swift */; };
 		1185333F29B4B42D00B2E4B3 /* ExtensionPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1185333E29B4B42D00B2E4B3 /* ExtensionPasswordViewController.swift */; };
+		1185334329B7292800B2E4B3 /* AlamofireServicePostSms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1185334229B7292800B2E4B3 /* AlamofireServicePostSms.swift */; };
+		1185334729B77F2800B2E4B3 /* AlamofireServicePostSmsOtpVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1185334629B77F2800B2E4B3 /* AlamofireServicePostSmsOtpVerification.swift */; };
 		11DAF5332993D6B600FFFED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DAF5322993D6B600FFFED7 /* AppDelegate.swift */; };
 		11DAF5352993D6B600FFFED7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DAF5342993D6B600FFFED7 /* SceneDelegate.swift */; };
 		11DAF5372993D6B600FFFED7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DAF5362993D6B600FFFED7 /* ViewController.swift */; };
@@ -63,6 +65,8 @@
 		0C8965302BB35C9DD3983C0C /* Pods-whizzizDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whizzizDemoTests.release.xcconfig"; path = "Target Support Files/Pods-whizzizDemoTests/Pods-whizzizDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		1185333C29B4B3D500B2E4B3 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		1185333E29B4B42D00B2E4B3 /* ExtensionPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPasswordViewController.swift; sourceTree = "<group>"; };
+		1185334229B7292800B2E4B3 /* AlamofireServicePostSms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireServicePostSms.swift; sourceTree = "<group>"; };
+		1185334629B77F2800B2E4B3 /* AlamofireServicePostSmsOtpVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireServicePostSmsOtpVerification.swift; sourceTree = "<group>"; };
 		11DAF52F2993D6B600FFFED7 /* whizzizDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whizzizDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DAF5322993D6B600FFFED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11DAF5342993D6B600FFFED7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +135,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1185334029B728DE00B2E4B3 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				1185334229B7292800B2E4B3 /* AlamofireServicePostSms.swift */,
+				1185334629B77F2800B2E4B3 /* AlamofireServicePostSmsOtpVerification.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		1185334129B728E700B2E4B3 /* URLSession */ = {
+			isa = PBXGroup;
+			children = (
+				11DAF57C299519C500FFFED7 /* ServicePostSmsOtpVerification.swift */,
+				11DAF56A2994036B00FFFED7 /* ServicePostSms.swift */,
+			);
+			path = URLSession;
+			sourceTree = "<group>";
+		};
+		1185334429B77E7F00B2E4B3 /* forURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				11DAF56F2994E24200FFFED7 /* ModelPostSmsOtpBody.swift */,
+			);
+			path = forURLSession;
+			sourceTree = "<group>";
+		};
+		1185334529B77EC000B2E4B3 /* forURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				11DAF5762995176700FFFED7 /* ModelPostSmsOtpVerificationBody.swift */,
+			);
+			path = forURLSession;
+			sourceTree = "<group>";
+		};
 		11DAF5262993D6B600FFFED7 = {
 			isa = PBXGroup;
 			children = (
@@ -199,8 +237,8 @@
 		11DAF5632993D83F00FFFED7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				11DAF56A2994036B00FFFED7 /* ServicePostSms.swift */,
-				11DAF57C299519C500FFFED7 /* ServicePostSmsOtpVerification.swift */,
+				1185334129B728E700B2E4B3 /* URLSession */,
+				1185334029B728DE00B2E4B3 /* Alamofire */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -242,7 +280,7 @@
 		11DAF5782995181F00FFFED7 /* SmsOtpSend */ = {
 			isa = PBXGroup;
 			children = (
-				11DAF56F2994E24200FFFED7 /* ModelPostSmsOtpBody.swift */,
+				1185334429B77E7F00B2E4B3 /* forURLSession */,
 				11DAF574299505D700FFFED7 /* ModelPostSmsOtpResponse.swift */,
 			);
 			path = SmsOtpSend;
@@ -251,7 +289,7 @@
 		11DAF5822995327600FFFED7 /* SmsOtpVerificationSend */ = {
 			isa = PBXGroup;
 			children = (
-				11DAF5762995176700FFFED7 /* ModelPostSmsOtpVerificationBody.swift */,
+				1185334529B77EC000B2E4B3 /* forURLSession */,
 				11DAF57A2995186B00FFFED7 /* ModelPostSmsOtpVerificationResponse.swift */,
 			);
 			path = SmsOtpVerificationSend;
@@ -548,6 +586,7 @@
 			files = (
 				1185333F29B4B42D00B2E4B3 /* ExtensionPasswordViewController.swift in Sources */,
 				11DAF584299532FB00FFFED7 /* VMsmsOtpSend.swift in Sources */,
+				1185334329B7292800B2E4B3 /* AlamofireServicePostSms.swift in Sources */,
 				11DAF5732994E65700FFFED7 /* APIvariables.swift in Sources */,
 				11DAF588299572E800FFFED7 /* ButtonFeatureFuncs.swift in Sources */,
 				1185333D29B4B3D500B2E4B3 /* PasswordViewController.swift in Sources */,
@@ -557,6 +596,7 @@
 				11DAF5692993FC3000FFFED7 /* VerificationViewController.swift in Sources */,
 				11DAF58A29959E6F00FFFED7 /* Values.swift in Sources */,
 				11DAF56B2994036B00FFFED7 /* ServicePostSms.swift in Sources */,
+				1185334729B77F2800B2E4B3 /* AlamofireServicePostSmsOtpVerification.swift in Sources */,
 				11DAF57D299519C500FFFED7 /* ServicePostSmsOtpVerification.swift in Sources */,
 				11DAF56D299405FB00FFFED7 /* UserInformationModel.swift in Sources */,
 				11DAF575299505D700FFFED7 /* ModelPostSmsOtpResponse.swift in Sources */,

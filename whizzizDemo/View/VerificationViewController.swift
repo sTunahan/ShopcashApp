@@ -15,6 +15,7 @@ class VerificationViewController: UIViewController {
     var userInformation:UserInformation?
     //API
      var smsOtpSendAll:SmsOtpSendAll!
+    var otpV:String = ""
     
     
     
@@ -22,10 +23,15 @@ class VerificationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         implementOtpView()
+        
         counter = 1
         buttonDisable()
-        postData()
+        
+        postDataAlamofire()
+        //postData()
         
     }
     
@@ -73,8 +79,8 @@ class VerificationViewController: UIViewController {
         counter += 1
         counterTime = -1
         if counter < 4 {
-                
-            postData()
+            postDataAlamofire()
+            //postData()
         }else {
             
             buttonDisable()
@@ -89,8 +95,11 @@ class VerificationViewController: UIViewController {
     }
     
     @IBAction func verificationOtpBtnClick(_ sender: Any) {
-   
-         postOtpVerification()
+        
+        
+        AlamofirePostOtpVerification()
+        //FOR URLSession
+         //postOtpVerification()
          counterTime = 0
         }
     

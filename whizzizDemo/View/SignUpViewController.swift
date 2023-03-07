@@ -35,6 +35,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func VerificationBtnClick(_ sender: Any) {
+        
         userInformation = UserInformation(name: nameTextField.text!, surName: surnameTextField.text!, email: emailTextField.text!, phoneNumber: phoneNumberTextField.text!)
         if nameTextField.text != "" && surnameTextField.text != "" && phoneNumberTextField.text != "" || emailTextField.text != ""{
             
